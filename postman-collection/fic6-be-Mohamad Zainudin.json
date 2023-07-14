@@ -1,0 +1,1170 @@
+{
+	"info": {
+		"_postman_id": "8d66b6f6-1625-498e-9b79-810dbc628fbc",
+		"name": "STRAPI-API-FIC-6",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5308739"
+	},
+	"item": [
+		{
+			"name": "Test API CRUD",
+			"item": [
+				{
+					"name": "api register user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"zain\",\r\n    \"password\" : \"zain123\",\r\n    \"email\" : \"zain@gmail.com\",\r\n    \"username\" :\"zain\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:1337/api/auth/local/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"auth",
+								"local",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\" : \"zain\",\r\n    \"password\" : \"zain123\",\r\n    \"email\" : \"zain@gmail.com\",\r\n    \"username\" :\"zain\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:1337/api/auth/local/register",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "1337",
+									"path": [
+										"api",
+										"auth",
+										"local",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "connect-src 'self' https:;img-src 'self' data: blob: https://market-assets.strapi.io;media-src 'self' data: blob:;default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline'"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "10"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "9"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1689213371"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Strapi <strapi.io>"
+								},
+								{
+									"key": "Content-Length",
+									"value": "336"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 13 Jul 2023 01:55:11 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"jwt\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjg5MjEzMzExLCJleHAiOjE2OTE4MDUzMTF9.nu_GA_PK96wvQRiaFZy6UrKOZ6p6WTEgofYCgwh3hpg\",\n    \"user\": {\n        \"id\": 1,\n        \"username\": \"zain\",\n        \"email\": \"zain@gmail.com\",\n        \"provider\": \"local\",\n        \"confirmed\": true,\n        \"blocked\": false,\n        \"createdAt\": \"2023-07-13T01:55:10.891Z\",\n        \"updatedAt\": \"2023-07-13T01:55:10.891Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "api login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"identifier\" : \"zain@gmail.com\",\r\n    \"password\" : \"zain123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local_strapi}}/api/auth/local",
+							"host": [
+								"{{local_strapi}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"local"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"identifier\" : \"zain@gmail.com\",\r\n    \"password\" : \"zain123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local_strapi}}/api/auth/local",
+									"host": [
+										"{{local_strapi}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"local"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "connect-src 'self' https:;img-src 'self' data: blob: https://market-assets.strapi.io;media-src 'self' data: blob:;default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline'"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "10"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "8"
+								},
+								{
+									"key": "X-RateLimit-Reset",
+									"value": "1689213671"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Strapi <strapi.io>"
+								},
+								{
+									"key": "Content-Length",
+									"value": "336"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 13 Jul 2023 02:00:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"jwt\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjg5MjEzNjQyLCJleHAiOjE2OTE4MDU2NDJ9.4pq2Cg2MqUBy3xEpHKYAWs27cvptr7X1qJjkOmBRJTY\",\n    \"user\": {\n        \"id\": 1,\n        \"username\": \"zain\",\n        \"email\": \"zain@gmail.com\",\n        \"provider\": \"local\",\n        \"confirmed\": true,\n        \"blocked\": false,\n        \"createdAt\": \"2023-07-13T01:55:10.891Z\",\n        \"updatedAt\": \"2023-07-13T01:55:10.891Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "api get all products",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{jwt_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local_strapi}}/api/restaurants?populate=*",
+							"host": [
+								"{{local_strapi}}"
+							],
+							"path": [
+								"api",
+								"restaurants"
+							],
+							"query": [
+								{
+									"key": "populate",
+									"value": "*"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{local_strapi}}/api/restaurants?populate=*",
+									"host": [
+										"{{local_strapi}}"
+									],
+									"path": [
+										"api",
+										"restaurants"
+									],
+									"query": [
+										{
+											"key": "populate",
+											"value": "*"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "connect-src 'self' https:;img-src 'self' data: blob: https://market-assets.strapi.io;media-src 'self' data: blob:;default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline'"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Strapi <strapi.io>"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1432"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 13 Jul 2023 02:03:33 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"attributes\": {\n                \"food_name\": \"Sushi Salmon Maki\",\n                \"food_description\": \"Sushi salmon maki adalah gulungan sushi yang terdiri dari nasi sushi yang dibalut dengan rumput laut dan diisi dengan irisan salmon segar. Sushi ini memiliki rasa yang segar, lezat, dan dilengkapi dengan kecambah dan saus wasabi.\",\n                \"food_price\": 35000,\n                \"food_image_url\": \"https://images.tokopedia.net/img/cache/700/VqbcmM/2023/3/2/173f3fbd-a28d-4c16-a21b-5dbadd5174b9.jpg\",\n                \"createdAt\": \"2023-07-08T01:44:21.654Z\",\n                \"updatedAt\": \"2023-07-08T15:08:09.128Z\",\n                \"publishedAt\": \"2023-07-08T01:44:32.078Z\",\n                \"food_images\": {\n                    \"data\": null\n                }\n            }\n        },\n        {\n            \"id\": 3,\n            \"attributes\": {\n                \"food_name\": \"Nasi Goreng\",\n                \"food_description\": \"Ini Nasi goreng enak\",\n                \"food_price\": 35000,\n                \"food_image_url\": \"https://images.tokopedia.net/img/cache/700/VqbcmM/2023/3/2/173f3fbd-a28d-4c16-a21b-5dbadd5174b9.jpg\",\n                \"createdAt\": \"2023-07-08T14:58:15.923Z\",\n                \"updatedAt\": \"2023-07-12T09:19:17.506Z\",\n                \"publishedAt\": \"2023-07-08T14:58:15.922Z\",\n                \"food_images\": {\n                    \"data\": null\n                }\n            }\n        },\n        {\n            \"id\": 4,\n            \"attributes\": {\n                \"food_name\": \"Bakso Urat\",\n                \"food_description\": \"Bakso Urat Sedap Purwodadi\",\n                \"food_price\": 35000,\n                \"food_image_url\": \"https://images.tokopedia.net/img/cache/700/VqbcmM/2023/3/2/173f3fbd-a28d-4c16-a21b-5dbadd5174b9.jpg\",\n                \"createdAt\": \"2023-07-12T09:18:06.151Z\",\n                \"updatedAt\": \"2023-07-12T09:18:06.151Z\",\n                \"publishedAt\": \"2023-07-12T09:18:06.149Z\",\n                \"food_images\": {\n                    \"data\": null\n                }\n            }\n        }\n    ],\n    \"meta\": {\n        \"pagination\": {\n            \"page\": 1,\n            \"pageSize\": 25,\n            \"pageCount\": 1,\n            \"total\": 3\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "api get product by id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{jwt_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local_strapi}}/api/restaurants/5",
+							"host": [
+								"{{local_strapi}}"
+							],
+							"path": [
+								"api",
+								"restaurants",
+								"5"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{local_strapi}}/api/restaurants/1",
+									"host": [
+										"{{local_strapi}}"
+									],
+									"path": [
+										"api",
+										"restaurants",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "connect-src 'self' https:;img-src 'self' data: blob: https://market-assets.strapi.io;media-src 'self' data: blob:;default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline'"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Strapi <strapi.io>"
+								},
+								{
+									"key": "Content-Length",
+									"value": "582"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 13 Jul 2023 02:04:38 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"attributes\": {\n            \"food_name\": \"Sushi Salmon Maki\",\n            \"food_description\": \"Sushi salmon maki adalah gulungan sushi yang terdiri dari nasi sushi yang dibalut dengan rumput laut dan diisi dengan irisan salmon segar. Sushi ini memiliki rasa yang segar, lezat, dan dilengkapi dengan kecambah dan saus wasabi.\",\n            \"food_price\": 35000,\n            \"food_image_url\": \"https://images.tokopedia.net/img/cache/700/VqbcmM/2023/3/2/173f3fbd-a28d-4c16-a21b-5dbadd5174b9.jpg\",\n            \"createdAt\": \"2023-07-08T01:44:21.654Z\",\n            \"updatedAt\": \"2023-07-08T15:08:09.128Z\",\n            \"publishedAt\": \"2023-07-08T01:44:32.078Z\"\n        }\n    },\n    \"meta\": {}\n}"
+						}
+					]
+				},
+				{
+					"name": "api create product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer {{jwt_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"data\": {\r\n    \"food_name\": \"Siomay Cihuy\",\r\n            \"food_description\": \"Siomay Enak beut\",\r\n            \"food_price\": 15000,\r\n            \"food_image_url\": \"siomay.jpg\"\r\n        }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local_strapi}}/api/restaurants",
+							"host": [
+								"{{local_strapi}}"
+							],
+							"path": [
+								"api",
+								"restaurants"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \r\n    \"data\": {\r\n    \"food_name\": \"Siomay Cihuy\",\r\n            \"food_description\": \"Siomay Enak beut\",\r\n            \"food_price\": 15000,\r\n            \"food_image_url\": \"siomay.jpg\"\r\n        }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local_strapi}}/api/restaurants",
+									"host": [
+										"{{local_strapi}}"
+									],
+									"path": [
+										"api",
+										"restaurants"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "connect-src 'self' https:;img-src 'self' data: blob: https://market-assets.strapi.io;media-src 'self' data: blob:;default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline'"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Strapi <strapi.io>"
+								},
+								{
+									"key": "Content-Length",
+									"value": "275"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 13 Jul 2023 02:08:08 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 5,\n        \"attributes\": {\n            \"food_name\": \"Siomay Cihuy\",\n            \"food_description\": \"Siomay Enak beut\",\n            \"food_price\": 15000,\n            \"food_image_url\": \"siomay.jpg\",\n            \"createdAt\": \"2023-07-13T02:08:08.242Z\",\n            \"updatedAt\": \"2023-07-13T02:08:08.242Z\",\n            \"publishedAt\": \"2023-07-13T02:08:08.239Z\"\n        }\n    },\n    \"meta\": {}\n}"
+						}
+					]
+				},
+				{
+					"name": "api update product",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"data\": {\r\n        \"food_name\": \"Bakso Beranak\",\r\n        \"food_description\" : \"Bakso beranak pinak\",\r\n        \"food_price\" : 25000,\r\n        \"food_image_url\" : \"bakso.jpeg\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local_strapi}}/api/restaurants/4",
+							"host": [
+								"{{local_strapi}}"
+							],
+							"path": [
+								"api",
+								"restaurants",
+								"4"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"data\": {\r\n        \"food_name\": \"Bakso Beranak\",\r\n        \"food_description\" : \"Bakso beranak pinak\",\r\n        \"food_price\" : 25000,\r\n        \"food_image_url\" : \"bakso.jpeg\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local_strapi}}/api/restaurants/3",
+									"host": [
+										"{{local_strapi}}"
+									],
+									"path": [
+										"api",
+										"restaurants",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "connect-src 'self' https:;img-src 'self' data: blob: https://market-assets.strapi.io;media-src 'self' data: blob:;default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline'"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Strapi <strapi.io>"
+								},
+								{
+									"key": "Content-Length",
+									"value": "279"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 13 Jul 2023 02:10:48 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 4,\n        \"attributes\": {\n            \"food_name\": \"Bakso Beranak\",\n            \"food_description\": \"Bakso beranak pinak\",\n            \"food_price\": 25000,\n            \"food_image_url\": \"bakso.jpeg\",\n            \"createdAt\": \"2023-07-12T09:18:06.151Z\",\n            \"updatedAt\": \"2023-07-13T02:10:48.804Z\",\n            \"publishedAt\": \"2023-07-12T09:18:06.149Z\"\n        }\n    },\n    \"meta\": {}\n}"
+						}
+					]
+				},
+				{
+					"name": "api delete product",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjg5MjEzNjQyLCJleHAiOjE2OTE4MDU2NDJ9.4pq2Cg2MqUBy3xEpHKYAWs27cvptr7X1qJjkOmBRJTY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local_strapi}}/api/restaurants/3",
+							"host": [
+								"{{local_strapi}}"
+							],
+							"path": [
+								"api",
+								"restaurants",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjg5MjEzNjQyLCJleHAiOjE2OTE4MDU2NDJ9.4pq2Cg2MqUBy3xEpHKYAWs27cvptr7X1qJjkOmBRJTY",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{local_strapi}}/api/restaurants/3",
+									"host": [
+										"{{local_strapi}}"
+									],
+									"path": [
+										"api",
+										"restaurants",
+										"3"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "connect-src 'self' https:;img-src 'self' data: blob: https://market-assets.strapi.io;media-src 'self' data: blob:;default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline'"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Strapi <strapi.io>"
+								},
+								{
+									"key": "Content-Length",
+									"value": "367"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 13 Jul 2023 02:16:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 3,\n        \"attributes\": {\n            \"food_name\": \"Nasi Goreng\",\n            \"food_description\": \"Ini Nasi goreng enak\",\n            \"food_price\": 35000,\n            \"food_image_url\": \"https://images.tokopedia.net/img/cache/700/VqbcmM/2023/3/2/173f3fbd-a28d-4c16-a21b-5dbadd5174b9.jpg\",\n            \"createdAt\": \"2023-07-08T14:58:15.923Z\",\n            \"updatedAt\": \"2023-07-12T09:19:17.506Z\",\n            \"publishedAt\": \"2023-07-08T14:58:15.922Z\"\n        }\n    },\n    \"meta\": {}\n}"
+						}
+					]
+				},
+				{
+					"name": "api upload gambar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "files",
+									"type": "file",
+									"src": "/C:/Users/User/Downloads/Screenshot 2023-07-13 091945.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local_strapi}}/api/upload",
+							"host": [
+								"{{local_strapi}}"
+							],
+							"path": [
+								"api",
+								"upload"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwt_token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "files",
+											"type": "file",
+											"src": "/C:/Users/User/Downloads/Screenshot 2023-07-13 091945.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{local_strapi}}/api/upload",
+									"host": [
+										"{{local_strapi}}"
+									],
+									"path": [
+										"api",
+										"upload"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "connect-src 'self' https:;img-src 'self' data: blob: https://market-assets.strapi.io;media-src 'self' data: blob:;default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline'"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Strapi <strapi.io>"
+								},
+								{
+									"key": "Content-Length",
+									"value": "699"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 13 Jul 2023 02:23:21 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"name\": \"Screenshot 2023-07-13 091945.png\",\n        \"alternativeText\": null,\n        \"caption\": null,\n        \"width\": 345,\n        \"height\": 430,\n        \"formats\": {\n            \"thumbnail\": {\n                \"name\": \"thumbnail_Screenshot 2023-07-13 091945.png\",\n                \"hash\": \"thumbnail_Screenshot_2023_07_13_091945_57f95fc651\",\n                \"ext\": \".png\",\n                \"mime\": \"image/png\",\n                \"path\": null,\n                \"width\": 125,\n                \"height\": 156,\n                \"size\": 12.78,\n                \"url\": \"/uploads/thumbnail_Screenshot_2023_07_13_091945_57f95fc651.png\"\n            }\n        },\n        \"hash\": \"Screenshot_2023_07_13_091945_57f95fc651\",\n        \"ext\": \".png\",\n        \"mime\": \"image/png\",\n        \"size\": 8.09,\n        \"url\": \"/uploads/Screenshot_2023_07_13_091945_57f95fc651.png\",\n        \"previewUrl\": null,\n        \"provider\": \"local\",\n        \"provider_metadata\": null,\n        \"createdAt\": \"2023-07-13T02:23:21.037Z\",\n        \"updatedAt\": \"2023-07-13T02:23:21.037Z\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "api payment callbacks",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{jwt_token}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"va_numbers\": [\r\n    {\r\n      \"va_number\": \"88853051326\",\r\n      \"bank\": \"bca\"\r\n    }\r\n  ],\r\n  \"transaction_time\": \"2023-07-14 21:39:35\",\r\n  \"transaction_status\": \"settlement\",\r\n  \"transaction_id\": \"200ebb5d-3e92-4bb6-86dc-85d7563326c3\",\r\n  \"status_message\": \"midtrans payment notification\",\r\n  \"status_code\": \"200\",\r\n  \"signature_key\": \"7f241d1c9b50fb8748f2f1a2f69847bb99d0840face579e6665d23c29179f3a64c71b41158d42d5efadd629d2fcea8f17b8adc3b02a35c55ef30c4aec19e170d\",\r\n  \"settlement_time\": \"2023-07-14 21:40:02\",\r\n  \"payment_type\": \"bank_transfer\",\r\n  \"payment_amounts\": [\r\n\r\n  ],\r\n  \"order_id\": \"10\",\r\n  \"merchant_id\": \"G197488853\",\r\n  \"gross_amount\": \"2207000.00\",\r\n  \"fraud_status\": \"accept\",\r\n  \"expiry_time\": \"2023-07-15 21:39:35\",\r\n  \"currency\": \"IDR\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/api/payment-callbacks",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"payment-callbacks"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "api callbacks",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{jwt_token}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"va_numbers\": [\r\n    {\r\n      \"va_number\": \"88853051326\",\r\n      \"bank\": \"bca\"\r\n    }\r\n  ],\r\n  \"transaction_time\": \"2023-07-14 21:39:35\",\r\n  \"transaction_status\": \"settlement\",\r\n  \"transaction_id\": \"200ebb5d-3e92-4bb6-86dc-85d7563326c3\",\r\n  \"status_message\": \"midtrans payment notification\",\r\n  \"status_code\": \"200\",\r\n  \"signature_key\": \"7f241d1c9b50fb8748f2f1a2f69847bb99d0840face579e6665d23c29179f3a64c71b41158d42d5efadd629d2fcea8f17b8adc3b02a35c55ef30c4aec19e170d\",\r\n  \"settlement_time\": \"2023-07-14 21:40:02\",\r\n  \"payment_type\": \"bank_transfer\",\r\n  \"payment_amounts\": [\r\n\r\n  ],\r\n  \"order_id\": \"10\",\r\n  \"merchant_id\": \"G197488853\",\r\n  \"gross_amount\": \"2207000.00\",\r\n  \"fraud_status\": \"accept\",\r\n  \"expiry_time\": \"2023-07-15 21:39:35\",\r\n  \"currency\": \"IDR\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:1337/api/payment-callbacks",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "1337",
+									"path": [
+										"api",
+										"payment-callbacks"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Security-Policy",
+									"value": "connect-src 'self' https:;img-src 'self' data: blob: https://market-assets.strapi.io;media-src 'self' data: blob:;default-src 'self';base-uri 'self';font-src 'self' https: data:;form-action 'self';frame-ancestors 'self';object-src 'none';script-src 'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline'"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "no-referrer"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-DNS-Prefetch-Control",
+									"value": "off"
+								},
+								{
+									"key": "X-Download-Options",
+									"value": "noopen"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Permitted-Cross-Domain-Policies",
+									"value": "none"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Strapi <strapi.io>"
+								},
+								{
+									"key": "Content-Length",
+									"value": "474"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 14 Jul 2023 15:38:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data:\": {\n        \"id\": 10,\n        \"items\": [\n            {\n                \"id\": 1,\n                \"name\": \"Fiber Access Terminal (FAT)\",\n                \"price\": 700000,\n                \"qty\": 1,\n                \"weight\": 2\n            },\n            {\n                \"id\": 2,\n                \"name\": \"FDT (Fiber Distribution Terminal)\",\n                \"price\": 1500000,\n                \"qty\": 1,\n                \"weight\": 5\n            }\n        ],\n        \"totalPrice\": 2207000,\n        \"deliveryAddress\": \"Jl. Aja lah, Kec. Pancoran, Kota Depok, Jawa Barat \",\n        \"courierName\": \"JNE\",\n        \"createdAt\": \"2023-07-14T14:39:24.614Z\",\n        \"updatedAt\": \"2023-07-14T15:38:12.344Z\",\n        \"publishedAt\": \"2023-07-14T14:39:24.610Z\",\n        \"statusOrder\": \"purchased\",\n        \"shippingCost\": 7000\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}

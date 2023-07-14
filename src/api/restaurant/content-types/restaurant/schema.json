@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "restaurants",
+  "info": {
+    "singularName": "restaurant",
+    "pluralName": "restaurants",
+    "displayName": "Waroeng Moe",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "food_name": {
+      "type": "string"
+    },
+    "food_description": {
+      "type": "richtext"
+    },
+    "food_images": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
+    },
+    "food_price": {
+      "type": "integer"
+    },
+    "food_image_url": {
+      "type": "string"
+    }
+  }
+}
